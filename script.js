@@ -100,7 +100,7 @@ document.getElementById("drawButton").addEventListener("click", function() {
   }
 
   let goldCount = results.filter(card => card === "gold").length;
-  while (goldCount > 2) {
+  while (goldCount > 3) {
     results = [];
     for (let i = 0; i < 3; i++) {
       results.push(getCardResult());
@@ -140,10 +140,6 @@ function showResultsSequentially(results) {
       card.textContent = slotResult.charAt(0).toUpperCase() + slotResult.slice(1);
   
       reel.appendChild(card);
-
-      if (slotIndex === results.length - 1 && slotResult !== 'gold') {
-        document.body.style.backgroundColor = getCardBackgroundColor(slotResult);
-      }
   
       currentSlot++;
       if (currentSlot < results.length) {
@@ -154,10 +150,18 @@ function showResultsSequentially(results) {
     showSlot(currentSlot);
   
     const goldCount = results.filter(card => card === "gold").length;
-    if (goldCount === 3) {
+    if (goldCount === 2) {
+      setTimeout(() => {
+        document.body.style.backgroundColor = 'black';
+      }, results.length * 500);
+      
       document.querySelector('h2').style.display = 'none';
       document.getElementById('drawButton').style.display = 'none';
-      triggerBackgroundEffect();
+    } else {
+      const lastResult = results[results.length - 1];
+      setTimeout(() => {
+        document.body.style.backgroundColor = getCardBackgroundColor(lastResult);
+      }, results.length * 500);
     }
   }
   
@@ -169,16 +173,11 @@ function showResultsSequentially(results) {
         return 'blue';
       case 'green':
         return 'green';
+      case 'gold':
+        return 'black';
       default:
-        return 'gold';
+        return '';
     }
-  }  
-
-  function triggerBackgroundEffect() {
-    document.body.classList.add("background-change");
-    setTimeout(() => {
-      document.body.classList.remove("background-change");
-    }, 5000);
   }
 
 function stopSlotMachine() {

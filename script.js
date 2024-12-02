@@ -150,7 +150,7 @@ function showResultsSequentially(results) {
     showSlot(currentSlot);
   
     const goldCount = results.filter(card => card === "gold").length;
-    if (goldCount === 2) {
+    if (goldCount === 3) {
       setTimeout(() => {
         document.body.style.backgroundColor = 'black';
       }, results.length * 500);

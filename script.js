@@ -100,7 +100,7 @@ document.getElementById("drawButton").addEventListener("click", function() {
   }
 
   let goldCount = results.filter(card => card === "gold").length;
-  while (goldCount > 3) {
+  while (goldCount > 2) {
     results = [];
     for (let i = 0; i < 3; i++) {
       results.push(getCardResult());

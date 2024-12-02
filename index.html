@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -67,27 +67,52 @@
     button:hover {
       background: #ffaa00;
     }
+    video {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+    #skipButton, .slotMachine {
+      display: none;
+    }
+    #drawButton, .slotMachine {
+      display: none;
+    }
+    #countdown {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #ffcc00;
+    }
   </style>
 </head>
 <body>
   <h1>ภูมิภัทร888</h1>
   <h2>ถ้าสุ่มได้สีทอง 3 อัน</h2>
   <h3>มึงได้ 500 บาท</h3>
-    <div class="slotMachine" id="slot1">
-      <div class="reel" id="reel1"></div>
-    </div>
 
-    <div class="slotMachine" id="slot2">
-      <div class="reel" id="reel2"></div>
-    </div>
+  <video id="introVideo" width="400" height="200" controls>
+    <source src="https://raw.githubusercontent.com/PHE-ON-TOP/RANDOM/refs/heads/main/SPD%20-%20สวัสดีค้าบ【SAWAS%20D%20KAB】.mp4" type="video/mp4">
+  </video>
 
-    <div class="slotMachine" id="slot3">
-      <div class="reel" id="reel3"></div>
-    </div>
+  <div class="slotMachine" id="slot1">
+    <div class="reel" id="reel1"></div>
+  </div>
+
+  <div class="slotMachine" id="slot2">
+    <div class="reel" id="reel2"></div>
+  </div>
+
+  <div class="slotMachine" id="slot3">
+    <div class="reel" id="reel3"></div>
+  </div>
+
   <button id="drawButton">สุ่ม</button>
+  <div id="countdown">ข้ามโฆษณาในอีก 10 วินาที</div>
+  <button id="skipButton">ข้ามโฆษณา</button>
   <h3>ทอง 5% | แดง 15%</h3>
   <h3>ฟ้า 30% | เขียว 50%</h3>
-
 
   <script src="script.js"></script>
 </body>

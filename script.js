@@ -2,12 +2,21 @@ let countdownTimer;
 let timeLeft = 10;
 let isPlaying = false;
 let isSlotActive = false;
+let spinResults = [];
 
 const introVideo = document.getElementById('introVideo');
 const skipButton = document.getElementById('skipButton');
 const drawButton = document.getElementById("drawButton");
 const slotMachines = document.querySelectorAll('.slotMachine');
 const countdownDisplay = document.getElementById('countdown');
+
+window.onload = function() {
+  const savedResults = JSON.parse(localStorage.getItem('slotResults'));
+  if (savedResults) {
+    spinResults = savedResults;
+    showResultsSequentially(spinResults);
+  }
+};
 
 function startCountdown() {
   countdownTimer = setInterval(function() {
@@ -100,6 +109,9 @@ document.getElementById("drawButton").addEventListener("click", function() {
   }
 
   isSlotActive = true;
+  spinResults = results;
+  localStorage.setItem('slotResults', JSON.stringify(spinResults));
+
   showResultsSequentially(results);
 
   setTimeout(() => {
@@ -158,7 +170,7 @@ function showResultsSequentially(results) {
       case 'green':
         return 'green';
       default:
-        return '';
+        return 'gold';
     }
   }  
 

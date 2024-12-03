@@ -19,7 +19,7 @@
 
     setInterval(function() {
       location.reload();
-    }, 1800000);
+    }, 300000);
   };  
   
   function startCountdown() {

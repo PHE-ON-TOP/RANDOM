@@ -1,23 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ภูมิภัทร999</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      user-select: none;
+      transition: background-color 1s ease;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #slotMachineContainer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .slotMachine {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 5px solid #ffffff2f;
+      border-radius: 5px;
+      background: #222;
+      margin-bottom: 20px;
+    }
+    .reel {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .card {
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150px;
+      color: #fff;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+    .red { background-color: red; }
+    .blue { background-color: blue; }
+    .green { background-color: green; }
+    .gold { background-color: gold; color: black; }
+    .purple { background-color: purple; color: white;}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap"
-      rel="stylesheet"
-    />
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #000;
+      background: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffaa00;
+    }
+    video {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+    #skipButton, .slotMachine {
+      display: none;
+    }
+    #drawButton, .slotMachine {
+      display: none;
+    }
+    #countdown {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <h1>ภูมิภัทร999</h1>
 
-    <link rel="stylesheet" href="style.css" />
-    <title>ภูมิภัทร999</title>
-  </head>
-  <body>
-    <div class="content">
-      <h1>404</h1>
-      <h2>PAGE NOT FOUND</h2>
-    </div>
-  </body>
+  <video id="introVideo" width="400" height="200" controls>
+    <source src="https://raw.githubusercontent.com/PHE-ON-TOP/RANDOM/refs/heads/main/SPD%20-%20สวัสดีค้าบ【SAWAS%20D%20KAB】.mp4" type="video/mp4">
+  </video>
+
+  <div class="slotMachine" id="slot1">
+    <div class="reel" id="reel1"></div>
+  </div>
+
+  <div class="slotMachine" id="slot2">
+    <div class="reel" id="reel2"></div>
+  </div>
+
+  <div class="slotMachine" id="slot3">
+    <div class="reel" id="reel3"></div>
+  </div>
+
+  <button id="drawButton">สุ่ม</button>
+  <div id="countdown">ข้ามโฆษณาในอีก 3 วินาที</div>
+  <button id="skipButton">ข้ามโฆษณา</button>
+  <h3>ม่วง 1% | ดำ 2.5%</h3>
+  <h3>ทอง 5% | แดง 15%</h3>
+  <h3>ฟ้า 30% | เขียว 50%</h3>
+  <h3>--------------------------------------</h3>
+  <h2>ถ้าสุ่มได้สีม่วง 3 อัน</h2>
+  <h3>มึงได้ 750 บาท</h3>
+  <h2>ถ้าสุ่มได้สีทอง 3 อัน</h2>
+  <h3>มึงได้ 250 บาท</h3>
+  <h2>ถ้าสุ่มได้สีดำ 1 อัน</h2>
+  <h3>มึงได้ 15 บาท</h3>
+  <h2>จำกัดสีดำ 20 ใบ</h2>
+
+  <script src="script.js"></script>
+</body>
 </html>

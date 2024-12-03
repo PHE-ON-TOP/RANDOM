@@ -16,7 +16,11 @@
       spinResults = savedResults;
       showResultsSequentially(spinResults);
     }
-  };
+
+    setInterval(function() {
+      location.reload();
+    }, 1800000);
+  };  
   
   function startCountdown() {
     countdownTimer = setInterval(function() {

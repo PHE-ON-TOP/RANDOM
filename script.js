@@ -108,7 +108,7 @@
     let goldCount = results.filter(card => card === "gold").length;
     let purpleCount = results.filter(card => card === "purple").length;
   
-    while (goldCount > 2 || purpleCount > 1) {
+    while (goldCount > 1 || purpleCount > 1) {
       results = [];
       for (let i = 0; i < 3; i++) {
         results.push(getCardResult());

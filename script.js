@@ -90,18 +90,16 @@
   
       if (chance < 0.01) {
         return "purple"; // 1%
-      } else if (chance < 0.035) {
-        return "black"; // 2.5%
-      } else if (chance < 0.085) {
+      } else if (chance < 0.06) {
         return "gold"; // 5%
-      } else if (chance < 0.235) {
+      } else if (chance < 0.21) {
         return "red"; // 15%
-      } else if (chance < 0.535) {
+      } else if (chance < 0.51) {
         return "blue"; // 30%
       } else {
         return "green"; // 50%
-      }
-    }
+      }   
+    }   
   
     for (let i = 0; i < 3; i++) {
       results.push(getCardResult());

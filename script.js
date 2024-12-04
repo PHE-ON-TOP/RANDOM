@@ -97,7 +97,7 @@
       } else if (chance < 0.51) {
         return "blue"; // 30%
       } else {
-        return "green"; // 50%
+        return "green"; // 49%
       }   
     }   
   
